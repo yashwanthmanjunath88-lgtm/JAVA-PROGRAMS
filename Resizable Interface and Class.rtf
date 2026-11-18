@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2908
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+interface Resizable \{\
+    void resizeWidth(int width);\
+    void resizeHeight(int height);\
+\}\
+\
+class Rectangle implements Resizable \{\
+\
+    int width, height;\
+\
+    Rectangle(int w, int h) \{\
+        width = w;\
+        height = h;\
+    \}\
+\
+    public void resizeWidth(int width) \{\
+        this.width = width;\
+    \}\
+\
+    public void resizeHeight(int height) \{\
+        this.height = height;\
+    \}\
+\
+    void display() \{\
+        System.out.println("Width: " + width);\
+        System.out.println("Height: " + height);\
+    \}\
+\}\
+\
+public class Main \{\
+    public static void main(String[] args) \{\
+\
+        Rectangle r = new Rectangle(10, 20);\
+\
+        System.out.println("Original Rectangle:");\
+        r.display();\
+\
+        r.resizeWidth(30);\
+        r.resizeHeight(40);\
+\
+        System.out.println("Resized Rectangle:");\
+        r.display();\
+    \}\
+\}\
+}
